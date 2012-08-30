@@ -1,5 +1,5 @@
-django-redis-sessions
-=======================
+django-redis-sessions (with Django 1.3 & domain socket connection)
+==================================================================
 Redis database backend for your sessions
 
 
@@ -8,6 +8,8 @@ Installation
 ------------
 
 1. Run ``pip install django-redis-sessions`` or alternatively  download the tarball and run ``python setup.py install``,
+
+For Django > 1.3 use origin package (https://github.com/martinrusev/django-redis-sessions)
 
 2. Set ``redis_sessions.session`` as your session engine, like so::
 
@@ -21,6 +23,8 @@ Installation
        SESSION_REDIS_PASSWORD = 'password'
        SESSION_REDIS_PREFIX = 'session'
 
-4. That's it
+       If you prefer domain socket connection, you can just add this line instead of SESSION_REDIS_HOST and SESSION_REDIS_PORT.
 
-See: http://pypi.python.org/pypi/django-redis-sessions
+       SESSION_REDIS_UNIX_DOMAIN_SOCKET_PATH = '/var/run/redis/redis.sock'
+
+4. That's it
